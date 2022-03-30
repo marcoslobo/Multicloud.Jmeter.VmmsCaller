@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -12,12 +12,6 @@
     <PackageReference Include="Microsoft.Azure.Management.Fluent" Version="1.38.0" />
     <PackageReference Include="Microsoft.Azure.Management.Network" Version="21.0.0" />
     <PackageReference Include="Microsoft.Azure.Management.ResourceManager.Fluent" Version="1.38.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="my.azureauth">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
 
 </Project>
