@@ -25,7 +25,7 @@ foreach (var vmNetworkInterface in networkInterfaces)
 
 var ipsNormalized = string.Join(",", listaIps);
 
-var output = $"./../../../apache-jmeter-3.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results.jtl -Jserver.rmi.ssl.disable=true".Bash();
+var output = $"./../../../apache-jmeter-5.4.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results.jtl -Jserver.rmi.ssl.disable=true".Bash();
 Console.WriteLine(output);
 
 public static class ShellHelper
