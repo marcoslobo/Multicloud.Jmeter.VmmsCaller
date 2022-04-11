@@ -25,16 +25,14 @@ foreach (var vmNetworkInterface in networkInterfaces)
 
 var ipsNormalized = string.Join(",", listaIps);
 
-//Gerar a variavel de ambiente
-var logFolder = "log_folder=$(date +%Y%m%d%H%M%S)".Bash();
-Console.WriteLine(logFolder);
+var timestamp = DateTimeOffset.UtcNow.Ticks;
 
 //Criar a pasta com o nome
-var folderr = "sudo mkdir /home/ubuntu/$log_folder".Bash();
+var folderr = $"sudo mkdir /home/ubuntu/{timestamp}".Bash();
 Console.WriteLine(folderr);
 
 //Executar
-var output = $"sudo ./../../../apache-jmeter-5.4.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results_$log_folder.jtl -Jserver.rmi.ssl.disable=true -o /home/ubuntu/$log_folder".Bash();
+var output = $"sudo ./../../../apache-jmeter-5.4.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results_$log_folder.jtl -Jserver.rmi.ssl.disable=true -o /home/ubuntu/{timestamp}".Bash();
 Console.WriteLine(output);
 
 public static class ShellHelper
