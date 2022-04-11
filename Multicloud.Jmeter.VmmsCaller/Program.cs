@@ -32,7 +32,7 @@ var timestamp = DateTimeOffset.UtcNow.Ticks;
 //Console.WriteLine(folderr);
 
 //Executar
-var output = $"sudo ./../../../apache-jmeter-5.4.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results_{timestamp}.jtl -Jserver.rmi.ssl.disable=true -o ./home/ubuntu/{timestamp}/".Bash();
+var output = $"sudo ./../../../apache-jmeter-5.4.3/bin/jmeter -n -t ./../../script.jmx -R {ipsNormalized} -l results_{timestamp}.jtl -Jserver.rmi.ssl.disable=true -o /{timestamp}".Bash();
 Console.WriteLine(output);
 
 public static class ShellHelper
